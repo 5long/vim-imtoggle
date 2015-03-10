@@ -1,0 +1,20 @@
+# vim-imtoggle
+
+Toggle Fcitx status when entering/leaving insert mode
+
+## Install
+
+With your favorite Vim plugin manager(vim-plug as the example):
+
+```
+Plug '5long/vim-imtoggle'
+```
+
+## Usage
+
+This plugin comes with 2 commands: `:IMEnable` and `:IMDisable`.
+I guess the names are clear enough already.
+
+## Unlicense
+
+See file UNLICENSE.
