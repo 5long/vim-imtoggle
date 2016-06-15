@@ -1,9 +1,11 @@
+let s:exec = exists("*jobstart") ? function("jobstart") : function("system")
+
 function! s:activate_fcitx()
-  !fcitx-remote -o
+  call s:exec("fcitx-remote -o")
 endfunction
 
 function! s:deactivate_fcitx()
-  !fcitx-remote -c
+  call s:exec("fcitx-remote -c")
 endfunction
 
 function! s:enable_im()
