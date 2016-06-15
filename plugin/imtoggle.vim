@@ -1,8 +1,8 @@
-function! s:activate_im()
+function! s:activate_fcitx()
   !fcitx-remote -o
 endfunction
 
-function! s:deactivate_im()
+function! s:deactivate_fcitx()
   !fcitx-remote -c
 endfunction
 
@@ -17,8 +17,8 @@ endfunction
 
 function! s:register_autocmd()
   augroup im_toggle
-    autocmd InsertEnter * call <SID>activate_im()
-    autocmd InsertLeave * call <SID>deactivate_im()
+    autocmd InsertEnter * call <SID>activate_fcitx()
+    autocmd InsertLeave * call <SID>deactivate_fcitx()
   augroup end
 endfunction
 
