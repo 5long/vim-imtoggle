@@ -1,11 +1,18 @@
 let s:exec = exists("*jobstart") ? function("jobstart") : function("system")
 
+if !exists('g:imtoggle_commands')
+  let g:imtoggle_commands = {
+    \ 'activate': 'fcitx-remote -o',
+    \ 'deactivate': 'fcitx-remote -c',
+    \ }
+endif
+
 function! s:activate_fcitx()
-  call s:exec("fcitx-remote -o")
+  call s:exec(g:imtoggle_commands.activate)
 endfunction
 
 function! s:deactivate_fcitx()
-  call s:exec("fcitx-remote -c")
+  call s:exec(g:imtoggle_commands.deactivate)
 endfunction
 
 function! s:enable_im()
