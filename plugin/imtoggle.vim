@@ -2,16 +2,16 @@ let s:exec = exists("*jobstart") ? function("jobstart") : function("system")
 
 if !exists('g:imtoggle_commands')
   let g:imtoggle_commands = {
-    \ 'activate': 'fcitx-remote -o',
-    \ 'deactivate': 'fcitx-remote -c',
+    \ 'activate': 'fcitx5-remote -o',
+    \ 'deactivate': 'fcitx5-remote -c',
     \ }
 endif
 
-function! s:activate_fcitx()
+function! s:activate_fcitx5()
   call s:exec(g:imtoggle_commands.activate)
 endfunction
 
-function! s:deactivate_fcitx()
+function! s:deactivate_fcitx5()
   call s:exec(g:imtoggle_commands.deactivate)
 endfunction
 
@@ -26,8 +26,8 @@ endfunction
 
 function! s:register_autocmd()
   augroup im_toggle
-    autocmd InsertEnter * call <SID>activate_fcitx()
-    autocmd InsertLeave * call <SID>deactivate_fcitx()
+    autocmd InsertEnter * call <SID>activate_fcitx5()
+    autocmd InsertLeave * call <SID>deactivate_fcitx5()
   augroup end
 endfunction
 
